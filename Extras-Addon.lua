@@ -1,4 +1,4 @@
- json = require('json')
+json = require('json')
 
 --[[
 
@@ -602,7 +602,7 @@ toolTip(Fun, "Explodes the entity in your crosshair when you point at it")
  Stats = Pla:add_tab("Stats")
 Stats:add_text("Change Levels")
 Stats:add_button("Randomize RP", function()
-    script.run_in_fiber(function (script)
+    script.run_in_fiber(function(script)
          randomizeRP = math.random(1, 1787576850) -- 1 Rp to 1787576850 Rp (lvl 1 to 8000)
         STATS.STAT_SET_INT(joaat(MPX() .. "CHAR_SET_RP_GIFT_ADMIN"), randomizeRP, true)
         gui.show_message("Stats", "Your RP has been randomized to "..randomizeRP..", changing session and applying RP")
@@ -613,7 +613,7 @@ end)
 toolTip(Stats, "Randomize your RP/Level")
 Stats:add_sameline()
 Stats:add_button("Lvl 1", function()
-    script.run_in_fiber(function (script)
+    script.run_in_fiber(function(script)
          rpLevel = 1 -- Level 1 -- https://www.unknowncheats.me/forum/2458458-post691.html
         STATS.STAT_SET_INT(joaat(MPX() .. "CHAR_SET_RP_GIFT_ADMIN"), rpLevel, true)
         gui.show_message("Stats", "Your level was set to 1, changing session and applying RP")
@@ -624,7 +624,7 @@ end)
 toolTip(Stats, "Set your level to 1")
 Stats:add_sameline()
 Stats:add_button("Lvl 100", function()
-    script.run_in_fiber(function (script)
+    script.run_in_fiber(function(script)
          rpLevel = 1584350 -- Level 100 -- https://www.unknowncheats.me/forum/2458458-post691.html
         STATS.STAT_SET_INT(joaat(MPX() .. "CHAR_SET_RP_GIFT_ADMIN"), rpLevel, true)
         gui.show_message("Stats", "Your level was set to 100, changing session and applying RP")
@@ -635,7 +635,7 @@ end)
 toolTip(Stats, "Set your level to 100")
 Stats:add_sameline()
 Stats:add_button("Lvl 420", function()
-    script.run_in_fiber(function (script)
+    script.run_in_fiber(function(script)
          rpLevel = 13288350 -- Level 420 -- https://www.unknowncheats.me/forum/2458458-post691.html
         STATS.STAT_SET_INT(joaat(MPX() .. "CHAR_SET_RP_GIFT_ADMIN"), rpLevel, true)
         gui.show_message("Stats", "Your level was set to 420, changing session and applying RP")
@@ -645,7 +645,7 @@ end)
 toolTip(Stats, "Set your level to 420")
 Stats:add_sameline()
 Stats:add_button("Lvl 1337", function()
-    script.run_in_fiber(function (script)
+    script.run_in_fiber(function(script)
          rpLevel = 75185850 -- Level 1337 -- https://www.unknowncheats.me/forum/2458458-post691.html
         STATS.STAT_SET_INT(joaat(MPX() .. "CHAR_SET_RP_GIFT_ADMIN"), rpLevel, true)
         gui.show_message("Stats", "Your level was set to 1337, changing session and applying RP")
@@ -656,7 +656,7 @@ end)
 toolTip(Stats, "Set your level to 1337")
 Stats:add_sameline()
 Stats:add_button("Lvl 8000", function()
-    script.run_in_fiber(function (script)
+    script.run_in_fiber(function(script)
          rpLevel = 1787576850 -- Level 8000 -- https://www.unknowncheats.me/forum/2458458-post691.html
         STATS.STAT_SET_INT(joaat(MPX() .. "CHAR_SET_RP_GIFT_ADMIN"), rpLevel, true)
         gui.show_message("Stats", "Your level was set to 8000, changing session and applying RP")
@@ -672,7 +672,7 @@ toolTip(Stats, "Set your level to a value between 1 and 8000")
 levelInput:set_value(1)-- TODO: Set PlayerRank as default value
 Stats:add_sameline()
 Stats:add_button("Change level", function()
-    script.run_in_fiber(function (script)
+    script.run_in_fiber(function(script)
         chosenLevel = levelInput:get_value()
         if chosenLevel >= 98 then
             rpLevel = 25 * chosenLevel^2 + 23575 * chosenLevel - 1023150 --calculate rank if greater than 97
@@ -710,7 +710,7 @@ end)
 Stats:add_separator()
 Stats:add_text("Income Statistics")
 Stats:add_button("Reset Income/Spent Stats", function()
-    script.run_in_fiber(function (script)
+    script.run_in_fiber(function(script)
         STATS.STAT_SET_INT(joaat("MPPLY_TOTAL_EVC"), 0, true)
         STATS.STAT_SET_INT(joaat("MPPLY_TOTAL_SVC"), 0, true)
         STATS.STAT_SET_INT(joaat(MPX() .. "MONEY_EARN_BETTING"), 0, true)
@@ -761,7 +761,7 @@ toolTip(Stats, "Put all your money into the bank")
 Stats:add_separator()
 Stats:add_text("Character Skills")
 Stats:add_button("Max All Skills", function()
-    script.run_in_fiber(function (script)
+    script.run_in_fiber(function(script)
         STATS.STAT_SET_INT(joaat(MPX() .. "SCRIPT_INCREASE_DRIV"), 1000, true)
         STATS.STAT_SET_INT(joaat(MPX() .. "SCRIPT_INCREASE_FLY"), 1000, true)
         STATS.STAT_SET_INT(joaat(MPX() .. "SCRIPT_INCREASE_LUNG"), 1000, true)
@@ -777,7 +777,7 @@ end)
 toolTip(Stats, "Max your characters skills (Driving, flying, stamina, etc.)")
 Stats:add_sameline()
 Stats:add_button("Reset All Skills", function()
-    script.run_in_fiber(function (script)
+    script.run_in_fiber(function(script)
  
         STATS.STAT_SET_INT(joaat(MPX() .. "SCRIPT_INCREASE_DRIV"), -1000, true)
         STATS.STAT_SET_INT(joaat(MPX() .. "SCRIPT_INCREASE_FLY"), -1000, true)
@@ -807,7 +807,7 @@ local weekly_words_global = 2737992
 local objectives_state_global = 1574744
 
 Stats:add_button("Unlock All", function() --Original script by ShinyWasabi
-    script.run_in_fiber(function (script)
+    script.run_in_fiber(function(script)
         local is_player_male = (ENTITY.GET_ENTITY_MODEL(PLAYER.PLAYER_PED_ID()) == joaat('mp_m_freemode_01'))
         unlock_packed_bools(110, 113) --Red Check Pajamas, Green Check Pajamas, Black Check Pajamas, I Heart LC T-shirt
         unlock_packed_bools(115, 115) --Roosevelt
@@ -2877,8 +2877,8 @@ local casino_heist_cars          = 0
 local casino_heist_masks         = 0
 
 casino_gui:add_text("Lucky Wheel")
-casino_gui:add_button("Give Podium Vehicle", function ()
-    script.run_in_fiber(function (script)
+casino_gui:add_button("Give Podium Vehicle", function()
+    script.run_in_fiber(function(script)
         if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("casino_lucky_wheel")) ~= 0 then
             locals.set_int("casino_lucky_wheel", (prize_wheel_win_state) + (prize_wheel_prize), 18)
             locals.set_int("casino_lucky_wheel", (prize_wheel_win_state) + (prize_wheel_prize_state), 11)
@@ -2886,8 +2886,8 @@ casino_gui:add_button("Give Podium Vehicle", function ()
     end)
 end)
 casino_gui:add_sameline()
-casino_gui:add_button("Give Mystery Prize", function ()
-    script.run_in_fiber(function (script)
+casino_gui:add_button("Give Mystery Prize", function()
+    script.run_in_fiber(function(script)
         if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("casino_lucky_wheel")) ~= 0 then
             locals.set_int("casino_lucky_wheel", (prize_wheel_win_state) + (prize_wheel_prize), 11)
             locals.set_int("casino_lucky_wheel", (prize_wheel_win_state) + (prize_wheel_prize_state), 11)
@@ -2895,8 +2895,8 @@ casino_gui:add_button("Give Mystery Prize", function ()
     end)
 end)
 casino_gui:add_sameline()
-casino_gui:add_button("Give $50,000", function ()
-    script.run_in_fiber(function (script)
+casino_gui:add_button("Give $50,000", function()
+    script.run_in_fiber(function(script)
         if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("casino_lucky_wheel")) ~= 0 then
             locals.set_int("casino_lucky_wheel", (prize_wheel_win_state) + (prize_wheel_prize), 19)
             locals.set_int("casino_lucky_wheel", (prize_wheel_win_state) + (prize_wheel_prize_state), 11)
@@ -2904,16 +2904,16 @@ casino_gui:add_button("Give $50,000", function ()
     end)
 end)
 casino_gui:add_sameline()
-casino_gui:add_button("Give 25,000 Chips", function ()
-    script.run_in_fiber(function (script)
+casino_gui:add_button("Give 25,000 Chips", function()
+    script.run_in_fiber(function(script)
         if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("casino_lucky_wheel")) ~= 0 then
             locals.set_int("casino_lucky_wheel", (prize_wheel_win_state) + (prize_wheel_prize), 15)
             locals.set_int("casino_lucky_wheel", (prize_wheel_win_state) + (prize_wheel_prize_state), 11)
         end
     end)
 end)
-casino_gui:add_button("Give 15,000RP", function ()
-    script.run_in_fiber(function (script)
+casino_gui:add_button("Give 15,000RP", function()
+    script.run_in_fiber(function(script)
         if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("casino_lucky_wheel")) ~= 0 then
             locals.set_int("casino_lucky_wheel", (prize_wheel_win_state) + (prize_wheel_prize), 17)
             locals.set_int("casino_lucky_wheel", (prize_wheel_win_state) + (prize_wheel_prize_state), 11)
@@ -2921,8 +2921,8 @@ casino_gui:add_button("Give 15,000RP", function ()
     end)
 end)
 casino_gui:add_sameline()
-casino_gui:add_button("Give Discount", function ()
-    script.run_in_fiber(function (script)
+casino_gui:add_button("Give Discount", function()
+    script.run_in_fiber(function(script)
         if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("casino_lucky_wheel")) ~= 0 then
             locals.set_int("casino_lucky_wheel", (prize_wheel_win_state) + (prize_wheel_prize), 4)
             locals.set_int("casino_lucky_wheel", (prize_wheel_win_state) + (prize_wheel_prize_state), 11)
@@ -2930,8 +2930,8 @@ casino_gui:add_button("Give Discount", function ()
     end)
 end)
 casino_gui:add_sameline()
-casino_gui:add_button("Give Clothing", function ()
-    script.run_in_fiber(function (script)
+casino_gui:add_button("Give Clothing", function()
+    script.run_in_fiber(function(script)
         if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("casino_lucky_wheel")) ~= 0 then
             locals.set_int("casino_lucky_wheel", (prize_wheel_win_state) + (prize_wheel_prize), 8)
             locals.set_int("casino_lucky_wheel", (prize_wheel_win_state) + (prize_wheel_prize_state), 11)
@@ -3003,7 +3003,7 @@ casino_gui:add_sameline()
 dealers_card_gui_element = casino_gui:add_input_string("##dealers_card_gui_element")
 
 casino_gui:add_button("Set Dealer's Hand To Bust", function()
-    script.run_in_fiber(function (script)
+    script.run_in_fiber(function(script)
          player_id = PLAYER.PLAYER_ID()
         while NETWORK.NETWORK_GET_HOST_OF_SCRIPT("blackjack", -1, 0) ~= player_id and NETWORK.NETWORK_GET_HOST_OF_SCRIPT("blackjack", 0, 0) ~= player_id and NETWORK.NETWORK_GET_HOST_OF_SCRIPT("blackjack", 1, 0) ~= player_id and NETWORK.NETWORK_GET_HOST_OF_SCRIPT("blackjack", 2, 0) ~= player_id and NETWORK.NETWORK_GET_HOST_OF_SCRIPT("blackjack", 3, 0) ~= player_id do
             network.force_script_host("blackjack")
@@ -3037,7 +3037,7 @@ force_roulette_wheel = casino_gui:add_checkbox("Activate Roulette Rig")
 casino_gui:add_separator()
 casino_gui:add_text("Using these options are risky, especially if you use the cooldown bypass")
 
-script.register_looped("Casino Pacino Thread", function (script)
+script.register_looped("Casino Pacino Thread", function(script)
     if force_poker_cards:is_enabled() then
          player_id = PLAYER.PLAYER_ID()
         if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("three_card_poker")) ~= 0 then
@@ -3935,7 +3935,7 @@ purgePtfx_t        = {}
 lctPtfx_t          = {}
 popSounds_t        = {}
 popsPtfx_t         = {}
-gta_vehicles       = {"Airbus", "Airtug", "akula", "akuma", "aleutian", "alkonost", "alpha", "alphaz1", "AMBULANCE", "annihilator", "annihilator2", "apc", "ardent", "armytanker", "armytrailer", "armytrailer2", "asbo", "asea", "asea2", "asterope", "asterope2", "astron", "autarch", "avarus", "avenger", "avenger2", "avenger3", "avenger4", "avisa", "bagger", "baletrailer", "Baller", "baller2", "baller3", "baller4", "baller5", "baller6", "baller7", "baller8", "banshee", "banshee2", "BARRACKS", "BARRACKS2", "BARRACKS3", "barrage", "bati", "bati2", "Benson", "benson2", "besra", "bestiagts", "bf400", "BfInjection", "Biff", "bifta", "bison", "Bison2", "Bison3", "BjXL", "blade", "blazer", "blazer2", "blazer3", "blazer4", "blazer5", "BLIMP", "BLIMP2", "blimp3", "blista", "blista2", "blista3", "BMX", "boattrailer", "boattrailer2", "boattrailer3", "bobcatXL", "Bodhi2", "bombushka", "boor", "boxville", "boxville2", "boxville3", "boxville4", "boxville5", "boxville6", "brawler", "brickade", "brickade2", "brigham", "brioso", "brioso2", "brioso3", "broadway", "bruiser", "bruiser2", "bruiser3", "brutus", "brutus2", "brutus3", "btype", "btype2", "btype3", "buccaneer", "buccaneer2", "buffalo", "buffalo2", "buffalo3", "buffalo4", "buffalo5", "bulldozer", "bullet", "Burrito", "burrito2", "burrito3", "Burrito4", "burrito5", "BUS", "buzzard", "Buzzard2", "cablecar", "caddy", "Caddy2", "caddy3", "calico", "CAMPER", "caracara", "caracara2", "carbonizzare", "carbonrs", "Cargobob", "cargobob2", "Cargobob3", "Cargobob4", "cargoplane", "cargoplane2", "casco", "cavalcade", "cavalcade2", "cavalcade3", "cerberus", "cerberus2", "cerberus3", "champion", "cheburek", "cheetah", "cheetah2", "chernobog", "chimera", "chino", "chino2", "cinquemila", "cliffhanger", "clique", "clique2", "club", "coach", "cog55", "cog552", "cogcabrio", "cognoscenti", "cognoscenti2", "comet2", "comet3", "comet4", "comet5", "comet6", "comet7", "conada", "conada2", "contender", "coquette", "coquette2", "coquette3", "coquette4", "corsita", "coureur", "cruiser", "CRUSADER", "cuban800", "cutter", "cyclone", "cypher", "daemon", "daemon2", "deathbike", "deathbike2", "deathbike3", "defiler", "deity", "deluxo", "deveste", "deviant", "diablous", "diablous2", "dilettante", "dilettante2", "Dinghy", "dinghy2", "dinghy3", "dinghy4", "dinghy5", "dloader", "docktrailer", "docktug", "dodo", "Dominator", "dominator2", "dominator3", "dominator4", "dominator5", "dominator6", "dominator7", "dominator8", "dominator9", "dorado", "double", "drafter", "draugur", "drifteuros", "driftfr36", "driftfuto", "driftjester", "driftremus", "drifttampa", "driftyosemite", "driftzr350", "dubsta", "dubsta2", "dubsta3", "dukes", "dukes2", "dukes3", "dump", "dune", "dune2", "dune3", "dune4", "dune5", "duster", "Dynasty", "elegy", "elegy2", "ellie", "emerus", "emperor", "Emperor2", "emperor3", "enduro", "entity2", "entity3", "entityxf", "esskey", "eudora", "Euros", "everon", "everon2", "exemplar", "f620", "faction", "faction2", "faction3", "fagaloa", "faggio", "faggio2", "faggio3", "FBI", "FBI2", "fcr", "fcr2", "felon", "felon2", "feltzer2", "feltzer3", "firetruk", "fixter", "flashgt", "FLATBED", "fmj", "FORKLIFT", "formula", "formula2", "fq2", "fr36", "freecrawler", "freight", "freight2", "freightcar", "freightcar2", "freightcont1", "freightcont2", "freightgrain", "Frogger", "frogger2", "fugitive", "furia", "furoregt", "fusilade", "futo", "futo2", "gargoyle", "Gauntlet", "gauntlet2", "gauntlet3", "gauntlet4", "gauntlet5", "gauntlet6", "gb200", "gburrito", "gburrito2", "glendale", "glendale2", "gp1", "graintrailer", "GRANGER", "granger2", "greenwood", "gresley", "growler", "gt500", "guardian", "habanero", "hakuchou", "hakuchou2", "halftrack", "handler", "Hauler", "Hauler2", "havok", "hellion", "hermes", "hexer", "hotknife", "hotring", "howard", "hunter", "huntley", "hustler", "hydra", "imorgon", "impaler", "impaler2", "impaler3", "impaler4", "impaler5", "impaler6", "imperator", "imperator2", "imperator3", "inductor", "inductor2", "infernus", "infernus2", "ingot", "innovation", "insurgent", "insurgent2", "insurgent3", "intruder", "issi2", "issi3", "issi4", "issi5", "issi6", "issi7", "issi8", "italigtb", "italigtb2", "italigto", "italirsx", "iwagen", "jackal", "jb700", "jb7002", "jester", "jester2", "jester3", "jester4", "jet", "jetmax", "journey", "journey2", "jubilee", "jugular", "kalahari", "kamacho", "kanjo", "kanjosj", "khamelion", "khanjali", "komoda", "kosatka", "krieger", "kuruma", "kuruma2", "l35", "landstalker", "landstalker2", "Lazer", "le7b", "lectro", "lguard", "limo2", "lm87", "locust", "longfin", "lurcher", "luxor", "luxor2", "lynx", "mamba", "mammatus", "manana", "manana2", "manchez", "manchez2", "manchez3", "marquis", "marshall", "massacro", "massacro2", "maverick", "menacer", "MESA", "mesa2", "MESA3", "metrotrain", "michelli", "microlight", "Miljet", "minitank", "minivan", "minivan2", "Mixer", "Mixer2", "mogul", "molotok", "monroe", "monster", "monster3", "monster4", "monster5", "monstrociti", "moonbeam", "moonbeam2", "Mower", "Mule", "Mule2", "Mule3", "mule4", "mule5", "nebula", "nemesis", "neo", "neon", "nero", "nero2", "nightblade", "nightshade", "nightshark", "nimbus", "ninef", "ninef2", "nokota", "Novak", "omnis", "omnisegt", "openwheel1", "openwheel2", "oppressor", "oppressor2", "oracle", "oracle2", "osiris", "outlaw", "Packer", "panthere", "panto", "paradise", "paragon", "paragon2", "pariah", "patriot", "patriot2", "patriot3", "patrolboat", "pbus", "pbus2", "pcj", "penetrator", "penumbra", "penumbra2", "peyote", "peyote2", "peyote3", "pfister811", "Phantom", "phantom2", "phantom3", "Phantom4", "Phoenix", "picador", "pigalle", "polgauntlet", "police", "police2", "police3", "police4", "police5", "policeb", "policeold1", "policeold2", "policet", "polmav", "pony", "pony2", "postlude", "Pounder", "pounder2", "powersurge", "prairie", "pRanger", "Predator", "premier", "previon", "primo", "primo2", "proptrailer", "prototipo", "pyro", "r300", "radi", "raiden", "raiju", "raketrailer", "rallytruck", "RancherXL", "rancherxl2", "RapidGT", "RapidGT2", "rapidgt3", "raptor", "ratbike", "ratel", "ratloader", "ratloader2", "rcbandito", "reaper", "Rebel", "rebel2", "rebla", "reever", "regina", "remus", "Rentalbus", "retinue", "retinue2", "revolter", "rhapsody", "rhinehart", "RHINO", "riata", "RIOT", "riot2", "Ripley", "rocoto", "rogue", "romero", "rrocket", "rt3000", "Rubble", "ruffian", "ruiner", "ruiner2", "ruiner3", "ruiner4", "rumpo", "rumpo2", "rumpo3", "ruston", "s80", "sabregt", "sabregt2", "Sadler", "sadler2", "Sanchez", "sanchez2", "sanctus", "sandking", "sandking2", "savage", "savestra", "sc1", "scarab", "scarab2", "scarab3", "schafter2", "schafter3", "schafter4", "schafter5", "schafter6", "schlagen", "schwarzer", "scorcher", "scramjet", "scrap", "seabreeze", "seashark", "seashark2", "seashark3", "seasparrow", "seasparrow2", "seasparrow3", "Seminole", "seminole2", "sentinel", "sentinel2", "sentinel3", "sentinel4", "serrano", "SEVEN70", "Shamal", "sheava", "SHERIFF", "sheriff2", "shinobi", "shotaro", "skylift", "slamtruck", "slamvan", "slamvan2", "slamvan3", "slamvan4", "slamvan5", "slamvan6", "sm722", "sovereign", "SPECTER", "SPECTER2", "speeder", "speeder2", "speedo", "speedo2", "speedo4", "speedo5", "squaddie", "squalo", "stafford", "stalion", "stalion2", "stanier", "starling", "stinger", "stingergt", "stingertt", "stockade", "stockade3", "stratum", "streamer216", "streiter", "stretch", "strikeforce", "stromberg", "Stryder", "Stunt", "submersible", "submersible2", "Sugoi", "sultan", "sultan2", "sultan3", "sultanrs", "Suntrap", "superd", "supervolito", "supervolito2", "Surano", "SURFER", "Surfer2", "surfer3", "surge", "swift", "swift2", "swinger", "t20", "Taco", "tahoma", "tailgater", "tailgater2", "taipan", "tampa", "tampa2", "tampa3", "tanker", "tanker2", "tankercar", "taxi", "technical", "technical2", "technical3", "tempesta", "tenf", "tenf2", "terbyte", "terminus", "tezeract", "thrax", "thrust", "thruster", "tigon", "TipTruck", "TipTruck2", "titan", "toreador", "torero", "torero2", "tornado", "tornado2", "tornado3", "tornado4", "tornado5", "tornado6", "toro", "toro2", "toros", "TOURBUS", "TOWTRUCK", "Towtruck2", "towtruck3", "towtruck4", "tr2", "tr3", "tr4", "TRACTOR", "tractor2", "tractor3", "trailerlarge", "trailerlogs", "trailers", "trailers2", "trailers3", "trailers4", "trailers5", "trailersmall", "trailersmall2", "Trash", "trash2", "trflat", "tribike", "tribike2", "tribike3", "trophytruck", "trophytruck2", "tropic", "tropic2", "tropos", "tug", "tula", "tulip", "tulip2", "turismo2", "turismo3", "turismor", "tvtrailer", "tvtrailer2", "tyrant", "tyrus", "utillitruck", "utillitruck2", "Utillitruck3", "vacca", "Vader", "vagner", "vagrant", "valkyrie", "valkyrie2", "vamos", "vectre", "velum", "velum2", "verlierer2", "verus", "vestra", "vetir", "veto", "veto2", "vigero", "vigero2", "vigero3", "vigilante", "vindicator", "virgo", "virgo2", "virgo3", "virtue", "viseris", "visione", "vivanite", "volatol", "volatus", "voltic", "voltic2", "voodoo", "voodoo2", "vortex", "vstr", "warrener", "warrener2", "washington", "wastelander", "weevil", "weevil2", "windsor", "windsor2", "winky", "wolfsbane", "xa21", "xls", "xls2", "yosemite", "yosemite2", "yosemite3", "youga", "youga2", "youga3", "youga4", "z190", "zeno", "zentorno", "zhaba", "zion", "zion2", "zion3", "zombiea", "zombieb", "zorrusso", "zr350", "zr380", "zr3802", "zr3803", "Ztype",}
+gta_vehicles       = {"Airbus", "Airtug", "akula", "akuma", "aleutian", "alkonost", "alpha", "alphaz1", "AMBULANCE", "annihilator", "annihilator2", "apc", "ardent", "armytanker", "armytrailer", "armytrailer2", "asbo", "asea", "asea2", "asterope", "asterope2", "astron", "autarch", "avarus", "avenger", "avenger2", "avenger3", "avenger4", "avisa", "bagger", "baletrailer", "Baller", "baller2", "baller3", "baller4", "baller5", "baller6", "baller7", "baller8", "banshee", "banshee2", "BARRACKS", "BARRACKS2", "BARRACKS3", "barrage", "bati", "bati2", "Benson", "benson2", "besra", "bestiagts", "bf400", "BfInjection", "Biff", "bifta", "bison", "Bison2", "Bison3", "BjXL", "blade", "blazer", "blazer2", "blazer3", "blazer4", "blazer5", "BLIMP", "BLIMP2", "blimp3", "blista", "blista2", "blista3", "BMX", "boattrailer", "boattrailer2", "boattrailer3", "bobcatXL", "Bodhi2", "bombushka", "boor", "boxville", "boxville2", "boxville3", "boxville4", "boxville5", "boxville6", "brawler", "brickade", "brickade2", "brigham", "brioso", "brioso2", "brioso3", "broadway", "bruiser", "bruiser2", "bruiser3", "brutus", "brutus2", "brutus3", "btype", "btype2", "btype3", "buccaneer", "buccaneer2", "buffalo", "buffalo2", "buffalo3", "buffalo4", "buffalo5", "bulldozer", "bullet", "Burrito", "burrito2", "burrito3", "Burrito4", "burrito5", "BUS", "buzzard", "Buzzard2", "cablecar", "caddy", "Caddy2", "caddy3", "calico", "CAMPER", "caracara", "caracara2", "carbonizzare", "carbonrs", "Cargobob", "cargobob2", "Cargobob3", "Cargobob4", "cargoplane", "cargoplane2", "casco", "cavalcade", "cavalcade2", "cavalcade3", "cerberus", "cerberus2", "cerberus3", "champion", "cheburek", "cheetah", "cheetah2", "chernobog", "chimera", "chino", "chino2", "cinquemila", "cliffhanger", "clique", "clique2", "club", "coach", "cog55", "cog552", "cogcabrio", "cognoscenti", "cognoscenti2", "comet2", "comet3", "comet4", "comet5", "comet6", "comet7", "conada", "conada2", "contender", "coquette", "coquette2", "coquette3", "coquette4", "corsita", "coureur", "cruiser", "CRUSADER", "cuban800", "cutter", "cyclone", "cypher", "daemon", "daemon2", "deathbike", "deathbike2", "deathbike3", "defiler", "deity", "deluxo", "deveste", "deviant", "diablous", "diablous2", "dilettante", "dilettante2", "Dinghy", "dinghy2", "dinghy3", "dinghy4", "dinghy5", "dloader", "docktrailer", "docktug", "dodo", "Dominator", "dominator2", "dominator3", "dominator4", "dominator5", "dominator6", "dominator7", "dominator8", "dominator9", "dorado", "double", "drafter", "draugur", "drifteuros", "driftfr36", "driftfuto", "driftjester", "driftremus", "drifttampa", "driftyosemite", "driftzr350", "dubsta", "dubsta2", "dubsta3", "dukes", "dukes2", "dukes3", "dump", "dune", "dune2", "dune3", "dune4", "dune5", "duster", "Dynasty", "elegy", "elegy2", "ellie", "emerus", "emperor", "Emperor2", "emperor3", "enduro", "entity2", "entity3", "entityxf", "esskey", "eudora", "Euros", "everon", "everon2", "exemplar", "f620", "faction", "faction2", "faction3", "fagaloa", "faggio", "faggio2", "faggio3", "FBI", "FBI2", "fcr", "fcr2", "felon", "felon2", "feltzer2", "feltzer3", "firetruk", "fixter", "flashgt", "FLATBED", "fmj", "FORKLIFT", "formula", "formula2", "fq2", "fr36", "freecrawler", "freight", "freight2", "freightcar", "freightcar2", "freightcont1", "freightcont2", "freightgrain", "Frogger", "frogger2", "fugitive", "furia", "furoregt", "fusilade", "futo", "futo2", "gargoyle", "Gauntlet", "gauntlet2", "gauntlet3", "gauntlet4", "gauntlet5", "gauntlet6", "gb200", "gburrito", "gburrito2", "glendale", "glendale2", "gp1", "graintrailer", "GRANGER", "granger2", "greenwood", "gresley", "growler", "gt500", "guardian", "habanero", "hakuchou", "hakuchou2", "halftrack", "handler", "Hauler", "Hauler2", "havok", "hellion", "hermes", "hexer", "hotknife", "hotring", "howard", "hunter", "huntley", "hustler", "hydra", "imorgon", "impaler", "impaler2", "impaler3", "impaler4", "impaler5", "impaler6", "imperator", "imperator2", "imperator3", "inductor", "inductor2", "infernus", "infernus2", "ingot", "innovation", "insurgent", "insurgent2", "insurgent3", "intruder", "issi2", "issi3", "issi4", "issi5", "issi6", "issi7", "issi8", "italigtb", "italigtb2", "italigto", "italirsx", "iwagen", "jackal", "jb700", "jb7002", "jester", "jester2", "jester3", "jester4", "jet", "jetmax", "journey", "journey2", "jubilee", "jugular", "kalahari", "kamacho", "kanjo", "kanjosj", "khamelion", "khanjali", "komoda", "kosatka", "krieger", "kuruma", "kuruma2", "l35", "landstalker", "landstalker2", "Lazer", "le7b", "lectro", "lguard", "limo2", "lm87", "locust", "longfin", "lurcher", "luxor", "luxor2", "lynx", "mamba", "mammatus", "manana", "manana2", "manchez", "manchez2", "manchez3", "marquis", "marshall", "massacro", "massacro2", "maverick", "menacer", "MESA", "mesa2", "MESA3", "metrotrain", "michelli", "microlight", "Miljet", "minitank", "minivan", "minivan2", "Mixer", "Mixer2", "mogul", "molotok", "monroe", "monster", "monster3", "monster4", "monster5", "monstrociti", "moonbeam", "moonbeam2", "Mower", "Mule", "Mule2", "Mule3", "mule4", "mule5", "nebula", "nemesis", "neo", "neon", "nero", "nero2", "nightblade", "nightshade", "nightshark", "nimbus", "ninef", "ninef2", "niobe", "nokota", "Novak", "omnis", "omnisegt", "openwheel1", "openwheel2", "oppressor", "oppressor2", "oracle", "oracle2", "osiris", "outlaw", "Packer", "panthere", "panto", "paradise", "paragon", "paragon2", "pariah", "patriot", "patriot2", "patriot3", "patrolboat", "pbus", "pbus2", "pcj", "penetrator", "penumbra", "penumbra2", "peyote", "peyote2", "peyote3", "pfister811", "Phantom", "phantom2", "phantom3", "Phantom4", "Phoenix", "picador", "pigalle", "pipistrello", "polgauntlet", "police", "police2", "police3", "police4", "police5", "policeb", "policeold1", "policeold2", "policet", "polmav", "pony", "pony2", "postlude", "Pounder", "pounder2", "powersurge", "prairie", "pRanger", "Predator", "premier", "previon", "primo", "primo2", "proptrailer", "prototipo", "pyro", "r300", "radi", "raiden", "raiju", "raketrailer", "rallytruck", "RancherXL", "rancherxl2", "RapidGT", "RapidGT2", "rapidgt3", "raptor", "ratbike", "ratel", "ratloader", "ratloader2", "rcbandito", "reaper", "Rebel", "rebel2", "rebla", "reever", "regina", "remus", "Rentalbus", "retinue", "retinue2", "revolter", "rhapsody", "rhinehart", "RHINO", "riata", "RIOT", "riot2", "Ripley", "rocoto", "rogue", "romero", "rrocket", "rt3000", "Rubble", "ruffian", "ruiner", "ruiner2", "ruiner3", "ruiner4", "rumpo", "rumpo2", "rumpo3", "ruston", "s80", "sabregt", "sabregt2", "Sadler", "sadler2", "Sanchez", "sanchez2", "sanctus", "sandking", "sandking2", "savage", "savestra", "sc1", "scarab", "scarab2", "scarab3", "schafter2", "schafter3", "schafter4", "schafter5", "schafter6", "schlagen", "schwarzer", "scorcher", "scramjet", "scrap", "seabreeze", "seashark", "seashark2", "seashark3", "seasparrow", "seasparrow2", "seasparrow3", "Seminole", "seminole2", "sentinel", "sentinel2", "sentinel3", "sentinel4", "serrano", "SEVEN70", "Shamal", "sheava", "SHERIFF", "sheriff2", "shinobi", "shotaro", "skylift", "slamtruck", "slamvan", "slamvan2", "slamvan3", "slamvan4", "slamvan5", "slamvan6", "sm722", "sovereign", "SPECTER", "SPECTER2", "speeder", "speeder2", "speedo", "speedo2", "speedo4", "speedo5", "squaddie", "squalo", "stafford", "stalion", "stalion2", "stanier", "starling", "stinger", "stingergt", "stingertt", "stockade", "stockade3", "stratum", "streamer216", "streiter", "stretch", "strikeforce", "stromberg", "Stryder", "Stunt", "submersible", "submersible2", "Sugoi", "sultan", "sultan2", "sultan3", "sultanrs", "Suntrap", "superd", "supervolito", "supervolito2", "Surano", "SURFER", "Surfer2", "surfer3", "surge", "swift", "swift2", "swinger", "t20", "Taco", "tahoma", "tailgater", "tailgater2", "taipan", "tampa", "tampa2", "tampa3", "tanker", "tanker2", "tankercar", "taxi", "technical", "technical2", "technical3", "tempesta", "tenf", "tenf2", "terbyte", "terminus", "tezeract", "thrax", "thrust", "thruster", "tigon", "TipTruck", "TipTruck2", "titan", "toreador", "torero", "torero2", "tornado", "tornado2", "tornado3", "tornado4", "tornado5", "tornado6", "toro", "toro2", "toros", "TOURBUS", "TOWTRUCK", "Towtruck2", "towtruck3", "towtruck4", "tr2", "tr3", "tr4", "TRACTOR", "tractor2", "tractor3", "trailerlarge", "trailerlogs", "trailers", "trailers2", "trailers3", "trailers4", "trailers5", "trailersmall", "trailersmall2", "Trash", "trash2", "trflat", "tribike", "tribike2", "tribike3", "trophytruck", "trophytruck2", "tropic", "tropic2", "tropos", "tug", "tula", "tulip", "tulip2", "turismo2", "turismo3", "turismor", "tvtrailer", "tvtrailer2", "tyrant", "tyrus", "utillitruck", "utillitruck2", "Utillitruck3", "vacca", "Vader", "vagner", "vagrant", "valkyrie", "valkyrie2", "vamos", "vectre", "velum", "velum2", "verlierer2", "verus", "vestra", "vetir", "veto", "veto2", "vigero", "vigero2", "vigero3", "vigilante", "vindicator", "virgo", "virgo2", "virgo3", "virtue", "viseris", "visione", "vivanite", "volatol", "volatus", "voltic", "voltic2", "voodoo", "voodoo2", "vorschlaghammer", "vortex", "vstr", "warrener", "warrener2", "washington", "wastelander", "weevil", "weevil2", "windsor", "windsor2", "winky", "wolfsbane", "xa21", "xls", "xls2", "yosemite", "yosemite2", "yosemite3", "youga", "youga2", "youga3", "youga4", "z190", "zeno", "zentorno", "zhaba", "zion", "zion2", "zion3", "zombiea", "zombieb", "zorrusso", "zr350", "zr380", "zr3802", "zr3803", "Ztype",}
 vehOffsets         = {
                     fc   = 0x001C,
                     ft   = 0x0014,
@@ -5501,7 +5501,7 @@ toolTip(Global, "Makes all vehicle horns go off constantly.")
 Global:add_separator()
 Global:add_text("Toxic Options")
 Global:add_button("Boat Skin Crash", function()
-    script.run_in_fiber(function (pedpacrash)
+    script.run_in_fiber(function(pedpacrash)
         gui.show_message("Boat Skin", "Giving everyone the boat skin.")
         PED.SET_PED_COORDS_KEEP_VEHICLE(PLAYER.PLAYER_PED_ID(), -74.94, -818.58, 327)
          spped = PLAYER.GET_PLAYER_PED_SCRIPT_INDEX(PLAYER.PLAYER_ID())
@@ -5545,24 +5545,37 @@ end)
 toolTip(Global, "Give everyone the boat skin! (Parachute Crash w/ Boat as a parachute, fairly effective) will crash the entire session, does not work on some modders.")
 Global:add_sameline()
 Global:add_button("Fragment crash", function()
-    script.run_in_fiber(function (fragcrash)
-     PlayerId = PLAYER.PLAYER_PED_ID()
+    if not network.is_session_started() then
+        gui.show_warning("Global Fragment Crash","Not in a session!")
+        return
+    else
+        gui.show_message("Global Fragment Crash","CRASHING everyone in the session!")
+    end
+    script.run_in_fiber(function(fragcrash)
+        local PlayerId = PLAYER.PLAYER_PED_ID()
         for i = 0, 31 do
             if i ~= PlayerId then
-                 players = i
+                local players = i
+                if PLAYER.GET_PLAYER_PED(players) == PLAYER.PLAYER_PED_ID() then --避免目标离开战局后作用于自己
+                    gui.show_message("The attack has stopped","The target has been detected to have left or the target is you")
+                    return
+                end
                 fraghash = joaat("prop_fragtest_cnst_04")
                 STREAMING.REQUEST_MODEL(fraghash)
-                 TargetCrds = ENTITY.GET_ENTITY_COORDS(PLAYER.GET_PLAYER_PED(selPlayer), false)
-                 crashstaff1 = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
-                    OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(crashstaff1, 1, false)
-                 crashstaff2 = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
-                    OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(crashstaff2, 1, false)
-                 crashstaff3 = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
-                    OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(crashstaff3, 1, false)
-                 crashstaff4 = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
-                    OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(crashstaff4, 1, false)
+                local TargetCrds = ENTITY.GET_ENTITY_COORDS(PLAYER.GET_PLAYER_PED(players), false)
+                local crashstaff1 = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
+                OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(crashstaff1, 1, false)
+                local crashstaff2 = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
+                OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(crashstaff2, 1, false)
+                local crashstaff3 = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
+                OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(crashstaff3, 1, false)
+                local crashstaff4 = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
+                OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(crashstaff4, 1, false)
                 for v = 0, 100 do
-                     TargetPlayerPos = ENTITY.GET_ENTITY_COORDS(PLAYER.GET_PLAYER_PED(network.get_selected_player()), false)
+                    if not network.is_session_started() then
+                        return
+                    end
+                    local TargetPlayerPos = ENTITY.GET_ENTITY_COORDS(PLAYER.GET_PLAYER_PED(players), false)
                     ENTITY.SET_ENTITY_COORDS_NO_OFFSET(crashstaff1, TargetPlayerPos.x, TargetPlayerPos.y, TargetPlayerPos.z, false, true, true)
                     ENTITY.SET_ENTITY_COORDS_NO_OFFSET(crashstaff2, TargetPlayerPos.x, TargetPlayerPos.y, TargetPlayerPos.z, false, true, true)
                     ENTITY.SET_ENTITY_COORDS_NO_OFFSET(crashstaff3, TargetPlayerPos.x, TargetPlayerPos.y, TargetPlayerPos.z, false, true, true)
@@ -5576,44 +5589,50 @@ Global:add_button("Fragment crash", function()
             end
         end
     end)
-    script.run_in_fiber(function (fragcrash2)
-     PlayerId = PLAYER.PLAYER_ID()
+    script.run_in_fiber(function(fragcrash2)
+        local PlayerId = PLAYER.PLAYER_ID()
         for i = 0, 31 do
             if i ~= PlayerId then
-                 players = i
-                 TargetCrds = ENTITY.GET_ENTITY_COORDS(PLAYER.GET_PLAYER_PED(players), false)
+                local players = i
+                if PLAYER.GET_PLAYER_PED(players) == PLAYER.PLAYER_PED_ID() then --避免目标离开战局后作用于自己
+                    gui.show_message("The attack has stopped","The target has been detected to have left or the target is you")
+                    return
+                end
+                local TargetCrds = ENTITY.GET_ENTITY_COORDS(PLAYER.GET_PLAYER_PED(players), false)
                 fraghash = joaat("prop_fragtest_cnst_04")
                 STREAMING.REQUEST_MODEL(fraghash)
                 for v=1,10 do
-
-                     object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
+                    if not network.is_session_started() then
+                        return
+                    end
+                    local object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
                     OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(object, 1, false)
                     delete_entity(object)
-                     object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
+                    local object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
                     OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(object, 1, false)
                     delete_entity(object)
-                     object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
+                    local object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
                     OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(object, 1, false)
                     delete_entity(object)
-                     object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
+                    local object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
                     OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(object, 1, false)
                     delete_entity(object)
-                     object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
+                    local object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
                     OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(object, 1, false)
                     delete_entity(object)
-                     object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
+                    local object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
                     OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(object, 1, false)
                     delete_entity(object)
-                     object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
+                    local object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
                     OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(object, 1, false)
                     delete_entity(object)
-                     object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
+                    local object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
                     OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(object, 1, false)
                     delete_entity(object)
-                     object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
+                    local object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
                     OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(object, 1, false)
                     delete_entity(object)
-                     object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
+                    local object = OBJECT.CREATE_OBJECT(fraghash, TargetCrds.x, TargetCrds.y, TargetCrds.z, true, false, false)
                     OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(object, 1, false)
                     fragcrash2:sleep(100)
                     delete_entity(object)
@@ -6437,7 +6456,7 @@ end
 
 mcBus:add_button("Change MC Name", function()
  
-    script.run_in_fiber(function (script)
+    script.run_in_fiber(function(script)
         for i, checkBox in ipairs(checkBoxes) do
             if checkBox:is_enabled() then
                 if labels[i] == "Copyright" then
@@ -6562,7 +6581,7 @@ end
 
 CEO:add_button("Change CEO Name", function()
  
-    script.run_in_fiber(function (script)
+    script.run_in_fiber(function(script)
         for i, checkBox in ipairs(checkBoxes) do
             if checkBox:is_enabled() then
                 if labels[i] == "Copyright" then
@@ -7709,14 +7728,14 @@ cayoHeist:add_button("Bring Everyone", function()
             t = PLAYER.GET_PLAYER_PED(i)
             if ENTITY.DOES_ENTITY_EXIST(t) then
                 gui.show_message(PLAYER.GET_PLAYER_NAME(i), calcDistance(t, p))
-                if calcDistance(t, p) > 50 then
+                if calcDistance(t, p) > 30 then
                     command.call("bring", {i})
                 end
             end
         end
     end)
 end)
-toolTip(cayoHeist, "Bring everyone further than 50 meters to you")
+toolTip(cayoHeist, "Bring everyone further than 30 meters to you")
 createCayoButtons(cayoHeist)
 cayoHeist:add_separator()
 cayoHeist:add_text("How to Set Up or Bypass Cooldown:")
@@ -8370,19 +8389,25 @@ script.register_looped("autoKick", function(script)
             local detect = network.is_player_flagged_as_modder(pid)
             local reason = network.get_flagged_modder_reason(pid)
             if pid ~= localPlayerID and detect and reason then
-                if not detectedModders[pid] then
+                gui.show_message("Auto Kick", "Modder detected!  "..PLAYER.GET_PLAYER_NAME(pid).."(" ..tostring(pid)..")")
+                -- if this modder wasnt already detected
+                if not detectedModders[pid] or (detectedModders[pid] and detectedModders[pid] == PLAYER.GET_PLAYER_NAME(pid)) then
                     detectedModders[pid] = PLAYER.GET_PLAYER_NAME(pid)
                 end
                 -- Kick modders automatically if not already kicked
                 if not kickedModders[pid] then
-                    command.call("smartkick", {pid})
                     if sendChatMessage:is_enabled() then
                         network.send_chat_message("Auto-Kicked " .. detectedModders[pid] .. " - Reason: "..reason, false)
                     end
                     gui.show_message("Auto Kick", "Automatically kicked " .. detectedModders[pid])
                     kickedModders[pid] = true -- Mark this modder as kicked
                 end
-            end 
+                if isHost then
+                    command.call("hostkick", {pid})
+                else
+                    command.call("smartkick", {pid})
+                end
+            end
         end
     end
 end)
@@ -8425,6 +8450,40 @@ script.register_looped("noCollision", function(script)
 	end
 end)
 toolTip(settingsTab, "Disables breaking windows on the vehicle you're using")
+
+
+settingsTab:add_button("Print Arrays", function()
+    for k,v in pairs(detectedModders) do
+        log.info("[detectedModders]:  k="..k.."  v="..v)
+    end
+    for k,v in pairs(kickedModders) do
+        log.info("[kickedModders]:  k="..k.."  name: "..detectedModders[k].."  v="..tostring(v))
+    end
+end)
+
+event.register_handler(menu_event.PlayerLeave, function(playerName)
+    for k,v in pairs(detectedModders) do
+        if v == playerName then
+            log.info("PlayerLeft  ("..playerName..")  [detectedModders]:  k="..k.."  v="..v)
+            table.remove(detectedModders,k)
+            table.remove(kickedModders,k)
+        end
+    end
+end)
+
+event.register_handler(menu_event.PlayerMgrInit, function()
+    detectedModders = 'nil'
+    detectedModders = {}
+    kickedModders = 'nil'
+    kickedModders = {}
+end)
+
+event.register_handler(menu_event.PlayerMgrShutdown, function()
+    detectedModders = 'nil'
+    detectedModders = {}
+    kickedModders = 'nil'
+    kickedModders = {}
+end)
 
 flags = ImGuiWindowFlags.None | ImGuiWindowFlags.NoSavedSettings
 griefPlayerTab:add_imgui(function()
@@ -8610,7 +8669,7 @@ toolTip(griefPlayerTab, "Spawns a clone of the player with a homing launcher to 
 
 griefPlayerTab:add_sameline()
 griefPlayerTab:add_button("Clown Attack", function()
-    script.run_in_fiber(function (clownAttack)
+    script.run_in_fiber(function(clownAttack)
          player = PLAYER.GET_PLAYER_PED(network.get_selected_player())
          coords = ENTITY.GET_ENTITY_COORDS(player, true)
          heading = ENTITY.GET_ENTITY_HEADING(player)
@@ -9276,7 +9335,7 @@ function upgrade_vehicle(vehicle)
 end
 
 function run_script(scriptName, stackSize) --启动脚本线程
-    script.run_in_fiber(function (runscript)
+    script.run_in_fiber(function(runscript)
         if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(MISC.GET_HASH_KEY(scriptName)) >= 1 then
         gui.show_error("Warning","Do not start script threads repeatedly!")
         else
@@ -9302,7 +9361,7 @@ function screen_draw_text(text, x, y, p0 , size) --在屏幕上绘制文字
 end
 
 function CreatePed(index, Hash, Pos, Heading)
-    script.run_in_fiber(function (ctped)
+    script.run_in_fiber(function(ctped)
     STREAMING.REQUEST_MODEL(Hash)
     while not STREAMING.HAS_MODEL_LOADED(Hash) do ctped:yield() end
     local Spawnedp = PED.CREATE_PED(index, Hash, Pos.x, Pos.y, Pos.z, Heading, true, true)
@@ -9312,7 +9371,7 @@ function CreatePed(index, Hash, Pos, Heading)
 end
 
 function create_object(hash, pos)
-    script.run_in_fiber(function (ctobjS)
+    script.run_in_fiber(function(ctobjS)
         STREAMING.REQUEST_MODEL(hash)
         while not STREAMING.HAS_MODEL_LOADED(hash) do ctobjS:yield() end
         local obj = OBJECT.CREATE_OBJECT(hash, pos.x, pos.y, pos.z, true, false, false)
@@ -9321,7 +9380,7 @@ function create_object(hash, pos)
 end
 
 function request_model(hash)
-    script.run_in_fiber(function (rqmd)
+    script.run_in_fiber(function(rqmd)
         STREAMING.REQUEST_MODEL(hash)
         while not STREAMING.HAS_MODEL_LOADED(hash) do
             rqmd:yield()
@@ -9331,7 +9390,7 @@ function request_model(hash)
 end
 
 function CreateVehicle(Hash, Pos, Heading, Invincible)
-    script.run_in_fiber(function (ctveh)
+    script.run_in_fiber(function(ctveh)
         STREAMING.REQUEST_MODEL(Hash)
         while not STREAMING.HAS_MODEL_LOADED(Hash) do ctveh:yield() end
         CreateVehicle_rlt = VEHICLE.CREATE_VEHICLE(Hash, Pos.x,Pos.y,Pos.z, Heading , true, true, true)
@@ -9686,7 +9745,7 @@ end
 
 griefPlayerTab:add_sameline()
 griefPlayerTab:add_button("Fragment crash", function()
-    script.run_in_fiber(function (fragcrash)
+    script.run_in_fiber(function(fragcrash)
         if PLAYER.GET_PLAYER_PED(network.get_selected_player()) == PLAYER.PLAYER_PED_ID() then --避免目标离开战局后作用于自己
             gui.show_message("The attack has stopped","The target has been detected to have left or the target is himself")
             return
@@ -9719,7 +9778,7 @@ griefPlayerTab:add_button("Fragment crash", function()
             delete_entity(crashstaff4)
         end
     end)
-    script.run_in_fiber(function (fragcrash2)
+    script.run_in_fiber(function(fragcrash2)
         local TargetCrds = ENTITY.GET_ENTITY_COORDS(PLAYER.GET_PLAYER_PED(network.get_selected_player()), false)
         fraghash = joaat("prop_fragtest_cnst_04")
         STREAMING.REQUEST_MODEL(fraghash)
@@ -9767,7 +9826,7 @@ toolTip(griefPlayerTab, "Spawns a bunch of objects on the selected player and br
 
 griefPlayerTab:add_sameline()
 griefPlayerTab:add_button("Model crash", function()
-    script.run_in_fiber(function (vtcrash)
+    script.run_in_fiber(function(vtcrash)
         if PLAYER.GET_PLAYER_PED(network.get_selected_player()) == PLAYER.PLAYER_PED_ID() then --避免目标离开战局后作用于自己
             gui.show_message("The attack has stopped","The target has been detected to have left or the target is himself")
             return
@@ -9800,7 +9859,7 @@ griefPlayerTab:add_button("Model crash", function()
         sleep(0.5)
     end)
 
-    script.run_in_fiber(function (vtcrash3)
+    script.run_in_fiber(function(vtcrash3)
         if PLAYER.GET_PLAYER_PED(network.get_selected_player()) == PLAYER.PLAYER_PED_ID() then --避免目标离开战局后作用于自己
             gui.show_message("The attack has stopped","The target has been detected to have left or the target is himself")
             return
@@ -9842,7 +9901,7 @@ griefPlayerTab:add_button("Model crash", function()
         sleep(0.5)
     end)
 
-    script.run_in_fiber(function (vtcrash2)
+    script.run_in_fiber(function(vtcrash2)
         for i = 1, 10, 1 do
             if PLAYER.GET_PLAYER_PED(network.get_selected_player()) == PLAYER.PLAYER_PED_ID() then --避免目标离开战局后作用于自己
                 gui.show_message("The attack has stopped","The target has been detected to have left or the target is himself")
@@ -9902,7 +9961,7 @@ griefPlayerTab:add_separator()
 griefPlayerTab:add_text("Cage Options")
 
 griefPlayerTab:add_button("Small Cage", function()
-    script.run_in_fiber(function (smallcage)
+    script.run_in_fiber(function(smallcage)
         local objHash = joaat("prop_gold_cont_01")
         STREAMING.REQUEST_MODEL(objHash)
         while not STREAMING.HAS_MODEL_LOADED(objHash) do
@@ -9964,7 +10023,7 @@ toolTip(griefPlayerTab, "Cages the player using fences")
 griefPlayerTab:add_sameline()
 
 griefPlayerTab:add_button("Tube Cage", function()
-    script.run_in_fiber(function (dubcage)
+    script.run_in_fiber(function(dubcage)
         local objHash = joaat("stt_prop_stunt_tube_s")
         local pos = ENTITY.GET_ENTITY_COORDS(PLAYER.GET_PLAYER_PED(network.get_selected_player()), false)
         STREAMING.REQUEST_MODEL(objHash)
@@ -10357,7 +10416,7 @@ end)
 
 settingsTab:add_separator()
 chatOpt:add_text(""..caesar_decrypt(encodedTwo..": "..encoded, 3).."")
---[[
+
 giftPlayerTab:add_imgui(function()
         ImGui.PushStyleColor(ImGuiCol.TitleBgCollapsed, 0.0, 0.0, 0.5, 1) -- Adjust the color as needed
         ImGui.PushStyleColor(ImGuiCol.WindowBg, 0.0, 0.0, 0.5, 1) -- Adjust the Window background color
@@ -10437,7 +10496,7 @@ giftPlayerTab:add_button("Reset Sliders", function()
 end)
 toolTip(giftPlayerTab, "Reset the sliders to their default values")
 giftPlayerTab:add_separator()
-]]
+
 
 function randomColors(veh)
     script.run_in_fiber(function(script)
@@ -10519,7 +10578,7 @@ function open_wheel(veh, wheelType, wheelStyle)
         openW:yield()
     end)
 end
---[[
+
 selected_wheel_index = 0
 selected_style_index = 0
 wheelType = ""
@@ -10915,7 +10974,7 @@ end)
 giftedsucc = false
 
 function giftVehToPlayer(vehicle, playerId, playerName)
-script.run_in_fiber(function(script)
+--[[script.run_in_fiber(function(script)
     if request_control(vehicle) then
          netHash = NETWORK.NETWORK_HASH_FROM_PLAYER_HANDLE(playerId)
 
@@ -10933,7 +10992,7 @@ script.run_in_fiber(function(script)
         giftedsucc = false
     end
     script:yield()
-end)
+end)]]
 end
 
 -- Hexarobi -- Delete any invisible cars that are commonly left over from gifting. Credit to Holy for finding this check
@@ -10954,7 +11013,7 @@ function clear_invisible_vehicles(pid, range)
 end
 
 giftPlayerTab:add_button("Gift Vehicle", function()
-
+--[[
     script.run_in_fiber(function(giftVeh)
 
         local selectedPlayer = network.get_selected_player()
@@ -10980,12 +11039,12 @@ giftPlayerTab:add_button("Gift Vehicle", function()
             giftedsucc = false -- set false to make sure next gifted car doesnt instantly stop repeating when it should still be repeating
         end
         giftVeh:yield()
-    end)
+    end)]]
 end)
 toolTip(giftPlayerTab, "Press the gift button after following the Gifting Process and when it reads Success, the gifting has been completed.")
 giftPlayerTab:add_sameline()
 giftPlayerTab:add_button("Get Vehicle Stats", function()
-    script.run_in_fiber(function(vehStats)
+    --[[script.run_in_fiber(function(vehStats)
         selectedPlayer = network.get_selected_player()
         targetPlayerPed = PLAYER.GET_PLAYER_PED(selectedPlayer)
 
@@ -11006,7 +11065,7 @@ giftPlayerTab:add_button("Get Vehicle Stats", function()
                 " Not_Allow_As_Saved_Veh:"..DECORATOR.DECOR_GET_INT(last_veh , "Not_Allow_As_Saved_Veh"))
         end
         vehStats:yield()
-    end)
+    end)]]
 end)
 toolTip(giftPlayerTab, "Checks to make sure the vehicle stats are what they need to be (Dev testing button)")
 giftPlayerTab:add_sameline()
@@ -11023,7 +11082,7 @@ giftPlayerTab:add_imgui(function()
     -- Ends the ImGui wrapper, new additions should be added above this.
     ImGui.End()
 end)
-]]
+
 ----------Config--------------------
 saveConfig = false
 
@@ -11080,7 +11139,7 @@ end)
 players = {}
 player = false
 
-event.register_handler(menu_event.ChatMessageReceived, function (pid, message)
+event.register_handler(menu_event.ChatMessageReceived, function(pid, message)
     playerName = PLAYER.GET_PLAYER_NAME(pid)
 if chatCommands:is_enabled() then
     if message == '.rp' then
